@@ -1,9 +1,9 @@
 ---
-name: using-superpowers
-description: Use when starting a session or deciding whether a named or clearly relevant superpowers skill should be loaded.
+name: using-codexpowers
+description: Use when starting a session or deciding whether a named or clearly relevant codexpowers skill should be loaded.
 ---
 
-# Using Superpowers
+# Using CodexPowers
 
 ## Goal
 Load only the skills that materially improve the current Codex task.
@@ -12,8 +12,8 @@ Load only the skills that materially improve the current Codex task.
 User instructions, `AGENTS.md`, and platform/developer instructions override this skill. When a skill conflicts with higher-priority instructions, follow the higher-priority instruction and note the conflict only if it affects the work.
 
 ## Use When
-- Session starts and a superpowers skill may apply.
-- User names a superpowers skill.
+- Session starts and a codexpowers skill may apply.
+- User names a codexpowers skill.
 - Task clearly matches a skill description.
 - You need to choose between process skills.
 

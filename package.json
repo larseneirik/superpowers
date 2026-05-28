@@ -1,8 +1,8 @@
 {
-  "name": "superpowers",
+  "name": "codexpowers",
   "version": "5.0.4",
   "type": "module",
-  "main": ".opencode/plugins/superpowers.js",
+  "main": ".opencode/plugins/codexpowers.js",
   "devDependencies": {
     "ws": "^8.20.0"
   }

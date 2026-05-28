@@ -20,6 +20,7 @@ Execute planned work with minimal chatter, scoped edits, and fresh verification.
 - Use `rg` for search and `apply_patch` for manual edits.
 - Run focused verification while iterating.
 - Run required repo-level verification before final success claims.
+- After final verification passes, mark the plan file executed with a timestamp at the top.
 - Leave unrelated dirty/untracked files alone.
 
 ## Do Not
@@ -28,13 +29,16 @@ Execute planned work with minimal chatter, scoped edits, and fresh verification.
 - Spawn subagents unless user asked or tasks are clearly independent and multi-agent tools are available.
 - Paste full passing command output.
 - Say done before verification passes or limits are stated.
+- Mark a plan executed before all required verification has passed.
 
 ## Workflow
 1. Read plan, relevant files, and git status.
 2. Make a short progress checklist.
 3. For each task: mark in progress, implement minimal change, verify, mark complete.
 4. If verification fails, read output, fix the root cause, re-run.
-5. Final: report changed files, verification, and unresolved risk.
+5. After final verification passes, add or update the first line of the plan file:
+   `> Executed: YYYY-MM-DD HH:MM:SS ±HHMM`
+6. Final: report changed files, verification, and unresolved risk.
 
 ## Status
 Only message user on start, blocker, verification failure, major task completion, and final. One sentence each.
