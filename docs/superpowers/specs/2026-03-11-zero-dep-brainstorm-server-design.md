@@ -38,7 +38,7 @@ XOR-unmask payload using 4-byte mask key. Return `{ opcode, payload, bytesConsum
 
 Three routes:
 
-1. **`GET /`** — Serve newest `.html` from screen directory by mtime. Detect full documents vs fragments, wrap fragments in frame template, inject helper.js. Return `text/html`. When no `.html` files exist, serve a hardcoded waiting page ("Waiting for Claude to push a screen...") with helper.js injected.
+1. **`GET /`** — Serve newest `.html` from screen directory by mtime. Detect full documents vs fragments, wrap fragments in frame template, inject helper.js. Return `text/html`. When no `.html` files exist, serve a hardcoded waiting page ("Waiting for the agent to push a screen...") with helper.js injected.
 2. **`GET /files/*`** — Serve static files from screen directory with MIME type lookup from a hardcoded extension map (html, css, js, png, jpg, gif, svg, json). Return 404 if not found.
 3. **Everything else** — 404.
 

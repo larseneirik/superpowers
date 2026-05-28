@@ -42,10 +42,10 @@ Replace the feedback-footer div (lines 227-233) with a selection indicator bar:
   </div>
 ```
 
-Also replace the default content inside `#claude-content` (lines 220-223) with the content placeholder:
+Also replace the default content inside `#codex-content` (lines 220-223) with the content placeholder:
 
 ```html
-    <div id="claude-content">
+    <div id="codex-content">
       <!-- CONTENT -->
     </div>
 ```

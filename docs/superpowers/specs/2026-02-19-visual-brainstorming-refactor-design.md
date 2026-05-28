@@ -65,7 +65,7 @@ In the chokidar `add` handler (new `.html` file detected), delete `$SCREEN_DIR/.
 
 **C. Replace `wrapInFrame` content injection.**
 
-The current regex anchors on `<div class="feedback-footer">`, which is being removed. Replace with a comment placeholder: remove the existing default content inside `#claude-content` (the `<h2>Visual Brainstorming</h2>` and subtitle paragraph) and replace with a single `<!-- CONTENT -->` marker. Content injection becomes `frameTemplate.replace('<!-- CONTENT -->', content)`. Simpler and won't break if template formatting changes.
+The current regex anchors on `<div class="feedback-footer">`, which is being removed. Replace with a comment placeholder: remove the existing default content inside `#codex-content` (the `<h2>Visual Brainstorming</h2>` and subtitle paragraph) and replace with a single `<!-- CONTENT -->` marker. Content injection becomes `frameTemplate.replace('<!-- CONTENT -->', content)`. Simpler and won't break if template formatting changes.
 
 ### `frame-template.html` (UI frame)
 
@@ -74,7 +74,7 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 - Associated CSS (`.feedback-footer`, `.feedback-footer label`, `.feedback-row`, textarea and button styles within it)
 
 **Add:**
-- `<!-- CONTENT -->` placeholder inside `#claude-content`, replacing the default text
+- `<!-- CONTENT -->` placeholder inside `#codex-content`, replacing the default text
 - A selection indicator bar where the footer was, with two states:
   - Default: "Click an option above, then return to the terminal"
   - After selection: "Option B selected — return to terminal to continue"
@@ -82,7 +82,7 @@ The current regex anchors on `<div class="feedback-footer">`, which is being rem
 
 **Keep unchanged:**
 - Header bar with "Brainstorm Companion" title and connection status
-- `.main` wrapper and `#claude-content` container
+- `.main` wrapper and `#codex-content` container
 - All component CSS (`.options`, `.cards`, `.mockup`, `.split`, `.pros-cons`, placeholders, mock elements)
 - Dark/light theme variables and media query
 

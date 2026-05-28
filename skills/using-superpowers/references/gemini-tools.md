@@ -1,6 +1,6 @@
 # Gemini CLI Tool Mapping
 
-Skills use Claude Code tool names. When you encounter these in a skill, use your platform equivalent:
+Some skills still use legacy tool names from the original authoring environment. When you encounter these in a skill, use your platform equivalent:
 
 | Skill references | Gemini CLI equivalent |
 |-----------------|----------------------|
@@ -18,11 +18,11 @@ Skills use Claude Code tool names. When you encounter these in a skill, use your
 
 ## No subagent support
 
-Gemini CLI has no equivalent to Claude Code's `Task` tool. Skills that rely on subagent dispatch (`subagent-driven-development`, `dispatching-parallel-agents`) will fall back to single-session execution via `executing-plans`.
+Gemini CLI has no equivalent to Codex's `spawn_agent` capability. Skills that rely on subagent dispatch (`subagent-driven-development`, `dispatching-parallel-agents`) will fall back to single-session execution via `executing-plans`.
 
 ## Additional Gemini CLI tools
 
-These tools are available in Gemini CLI but have no Claude Code equivalent:
+These tools are available in Gemini CLI but have no direct Codex equivalent:
 
 | Tool | Purpose |
 |------|---------|

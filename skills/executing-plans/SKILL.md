@@ -1,70 +1,45 @@
 ---
 name: executing-plans
-description: Use when you have a written implementation plan to execute in a separate session with review checkpoints
+description: Use when executing a written implementation plan or multi-step repo change in the current Codex session.
 ---
 
 # Executing Plans
 
-## Overview
+## Goal
+Execute planned work with minimal chatter, scoped edits, and fresh verification.
 
-Load plan, review critically, execute all tasks, report when complete.
+## Use When
+- A plan file already exists.
+- User asks you to implement a multi-step change.
+- Code changes should proceed without more design discussion.
 
-**Announce at start:** "I'm using the executing-plans skill to implement this plan."
+## Do
+- Read the plan and the smallest relevant files.
+- Check `git status --short` before edits.
+- Use `update_plan` for visible task tracking.
+- Use `rg` for search and `apply_patch` for manual edits.
+- Run focused verification while iterating.
+- Run required repo-level verification before final success claims.
+- Leave unrelated dirty/untracked files alone.
 
-**Note:** Tell your human partner that Superpowers works much better with access to subagents. The quality of its work will be significantly higher if run on a platform with subagent support (such as Claude Code or Codex). If subagents are available, use superpowers:subagent-driven-development instead of this skill.
+## Do Not
+- Re-plan unless the plan is impossible, unsafe, or conflicts with higher-priority instructions.
+- Add unplanned features or broad refactors.
+- Spawn subagents unless user asked or tasks are clearly independent and multi-agent tools are available.
+- Paste full passing command output.
+- Say done before verification passes or limits are stated.
 
-## The Process
+## Workflow
+1. Read plan, relevant files, and git status.
+2. Make a short progress checklist.
+3. For each task: mark in progress, implement minimal change, verify, mark complete.
+4. If verification fails, read output, fix the root cause, re-run.
+5. Final: report changed files, verification, and unresolved risk.
 
-### Step 1: Load and Review Plan
-1. Read plan file
-2. Review critically - identify any questions or concerns about the plan
-3. If concerns: Raise them with your human partner before starting
-4. If no concerns: Create TodoWrite and proceed
+## Status
+Only message user on start, blocker, verification failure, major task completion, and final. One sentence each.
 
-### Step 2: Execute Tasks
-
-For each task:
-1. Mark as in_progress
-2. Follow each step exactly (plan has bite-sized steps)
-3. Run verifications as specified
-4. Mark as completed
-
-### Step 3: Complete Development
-
-After all tasks complete and verified:
-- Announce: "I'm using the finishing-a-development-branch skill to complete this work."
-- **REQUIRED SUB-SKILL:** Use superpowers:finishing-a-development-branch
-- Follow that skill to verify tests, present options, execute choice
-
-## When to Stop and Ask for Help
-
-**STOP executing immediately when:**
-- Hit a blocker (missing dependency, test fails, instruction unclear)
-- Plan has critical gaps preventing starting
-- You don't understand an instruction
-- Verification fails repeatedly
-
-**Ask for clarification rather than guessing.**
-
-## When to Revisit Earlier Steps
-
-**Return to Review (Step 1) when:**
-- Partner updates the plan based on your feedback
-- Fundamental approach needs rethinking
-
-**Don't force through blockers** - stop and ask.
-
-## Remember
-- Review plan critically first
-- Follow plan steps exactly
-- Don't skip verifications
-- Reference skills when plan says to
-- Stop when blocked, don't guess
-- Never start implementation on main/master branch without explicit user consent
-
-## Integration
-
-**Required workflow skills:**
-- **superpowers:using-git-worktrees** - REQUIRED: Set up isolated workspace before starting
-- **superpowers:writing-plans** - Creates the plan this skill executes
-- **superpowers:finishing-a-development-branch** - Complete development after all tasks
+## Verify
+- Focused checks from plan.
+- Project-required checks from `AGENTS.md`.
+- Browser check for UI when practical.

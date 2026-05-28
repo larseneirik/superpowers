@@ -182,7 +182,7 @@ const WAITING_PAGE = `<!DOCTYPE html>
 h1 { color: #333; } p { color: #666; }</style>
 </head>
 <body><h1>Brainstorm Companion</h1>
-<p>Waiting for Claude to push a screen...</p></body></html>`;
+<p>Waiting for the agent to push a screen...</p></body></html>`;
 
 const frameTemplate = fs.readFileSync(path.join(__dirname, 'frame-template.html'), 'utf-8');
 const helperScript = fs.readFileSync(path.join(__dirname, 'helper.js'), 'utf-8');
@@ -458,7 +458,7 @@ Expected: `server-started` JSON printed with port 9876
 
 - [ ] **Step 2: Open browser to http://localhost:9876**
 
-Expected: Waiting page with "Waiting for Claude to push a screen..."
+Expected: Waiting page with "Waiting for the agent to push a screen..."
 
 - [ ] **Step 3: Write an HTML file to the screen directory**
 

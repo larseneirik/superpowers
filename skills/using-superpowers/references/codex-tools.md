@@ -1,12 +1,12 @@
 # Codex Tool Mapping
 
-Skills use Claude Code tool names. When you encounter these in a skill, use your platform equivalent:
+Some skills still use legacy tool names from the original authoring environment. When you encounter these in a skill, use the Codex equivalent:
 
 | Skill references | Codex equivalent |
 |-----------------|------------------|
 | `Task` tool (dispatch subagent) | `spawn_agent` |
 | Multiple `Task` calls (parallel) | Multiple `spawn_agent` calls |
-| Task returns result | `wait` |
+| Task returns result | `wait_agent` |
 | Task completes automatically | `close_agent` to free slot |
 | `TodoWrite` (task tracking) | `update_plan` |
 | `Skill` tool (invoke a skill) | Skills load natively — just follow the instructions |

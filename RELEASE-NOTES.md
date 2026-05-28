@@ -628,7 +628,6 @@ Description changed to imperative: "You MUST use this before any creative work�
 - Personal skills override superpowers skills when names match
 - Clean skill display: shows name/description without raw frontmatter
 - Helpful context: shows supporting files directory for each skill
-- Tool mapping for Codex: TodoWrite→update_plan, subagents→manual fallback, etc.
 - Bootstrap integration with minimal AGENTS.md for automatic startup
 - Complete installation guide and bootstrap instructions specific to Codex
 
